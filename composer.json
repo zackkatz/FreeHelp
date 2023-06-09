@@ -1,0 +1,29 @@
+{
+    "name": "zackkatz/freehelp",
+    "description": "",
+    "authors": [
+        {
+            "name": "Zack Katz",
+            "email": "zack@katz.co"
+        },
+        {
+            "name": "William Entriken",
+            "email": "github.com@phor.net"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\FreeHelp\\Providers\\FreeHelpServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\FreeHelp\\": ""
+        }
+    }
+}
+
