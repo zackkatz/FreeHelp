@@ -14,27 +14,25 @@ These instructions assume you installed FreeScout using the [recommended process
 
 Other installations are possible, but not supported here.
 
-1. Download the [latest release of FreeScout Dropkick JS](https://github.com/fulldecent/freescout-dropkick-js/releases).
+1. Download the [latest release of FreeHelp](https://github.com/zackkatz/FreeHelp/releases).
 
 2. Unzip the file locally.
 
-3. Open DropkickJSServiceProvider.php using a code editor and change between the `<<<JS` and `JS` lines to remove my hack use case and add your own.
-
-4. Copy the folder into your server using SFTP.
+3. Copy the folder into your server using SFTP.
 
    ```sh
    scp -r ~/Desktop/freehelp-root@freescout.example.com:/var/www/html/Modules/FreeHelp/
    ```
 
-5. SSH into the server and update permissions on that folder.
+4. SSH into the server and update permissions on that folder.
 
    ```sh
    chown -r www-data:www-data /var/www/html/Modules/FreeHelp/
    ```
 
-6. Access your admin modules page like https://freescout.example.com/modules/list.
+5. Access your admin modules page like https://freescout.example.com/modules/list.
 
-7. Find **FreeHelp** and click ACTIVATE.
+6. Find **FreeHelp** and click ACTIVATE.
 
 ## Inspiration
 
