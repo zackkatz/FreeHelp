@@ -22,11 +22,15 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 - [ ] The modal is too low when using editing a customer in the CRM module
 - [ ] The brand icon is too large when on the main FreeScout mailboxes screen
 
-## Wishlist
+## Todo list
 
 - [ ] Improve the icons bundled with FreeScout
-- [ ] Implement a nicer search modal
 - [ ] Convert CSS and JS to external files
+- [ ] Add "Customers" as a top-level menu item
+
+## Wish list
+
+- [ ] Implement a nicer search modal
 
 ## Installation
 
