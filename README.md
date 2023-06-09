@@ -13,7 +13,18 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
   - Match more line spacing and font sizings
   - Set the sidebar background color to gray and sidebar panel colors to white
   - Highlight selected rows in the conversation table
+  - Hide the text color formatting button from the reply editor
   - And much more!
+
+## Known bugs
+
+- [ ] The modal is too low when using editing a customer in the CRM module
+- [ ] The brand icon is too large when on the main FreeScout mailboxes screen
+
+## Wishlist
+
+- [ ] Improve the icons bundled with FreeScout
+- [ ] Implement a nicer search modal
 
 ## Installation
 
