@@ -14,6 +14,7 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
   - Set the sidebar background color to gray and sidebar panel colors to white
   - Highlight selected rows in the conversation table
   - Hide the text color formatting button from the reply editor
+  - Make the modal look more like the Help Scout modal
   - And much more!
 
 ## Known bugs
