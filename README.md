@@ -2,9 +2,10 @@
 
 FreeHelp makes FreeScout look and feel more like Help Scout, adding many small quality-of-life improvements.
 
-- Shift-click checkboxes to select a range of conversations at once
+- Don't open anything in new tabs/windows! [#2914](https://github.com/freescout-helpdesk/freescout/issues/2914)
+- Shift-click checkboxes to select a range of conversations at once [#1312](https://github.com/freescout-helpdesk/freescout/issues/1312)
 - Convert Dropdown-type Custom Fields to Select2 inputs
-- Type `/` to quickly access search
+- Type `/` to quickly access search [feature request](https://feedback.userreport.com/25a3cb5f-e4bd-4470-b6f3-79fcfaa8e90f/#idea/393550)
 - Type `Escape` to close dropdowns, cancel editing conversation titles, and cancel editing a note
 - Apply many CSS tweaks to make FreeScout look and feel more like Help Scout
   - Wrap Custom Fields in the familiar gray box
