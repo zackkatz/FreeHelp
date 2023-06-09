@@ -45,7 +45,7 @@ Other installations are possible, but not supported here.
 4. SSH into the server and update permissions on that folder.
 
    ```sh
-   chown -r www-data:www-data /var/www/html/Modules/FreeHelp/
+   chown -R www-data:www-data /var/www/html/Modules/FreeHelp/
    ```
 
 5. Access your admin modules page like https://freescout.example.com/modules/list.
