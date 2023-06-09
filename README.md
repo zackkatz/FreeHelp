@@ -26,6 +26,7 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 
 - [ ] Improve the icons bundled with FreeScout
 - [ ] Implement a nicer search modal
+- [ ] Convert CSS and JS to external files
 
 ## Installation
 
