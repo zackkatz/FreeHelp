@@ -7,6 +7,12 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 - Type `/` to quickly access search
 - Type `Escape` to close dropdowns, cancel editing conversation titles, and cancel editing a note
 - Apply many CSS tweaks to make FreeScout look and feel more like Help Scout
+  - Wrap Custom Fields in the familiar gray box
+  - Remove many of the blue highlights in the FreeScout interface
+  - Match more line spacing and font sizings
+  - Set the sidebar background color to gray and sidebar panel colors to white
+  - Highlight selected rows in the conversation table
+  - And much more!
 
 ## Installation
 
