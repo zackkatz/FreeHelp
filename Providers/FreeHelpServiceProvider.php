@@ -316,6 +316,13 @@ JS;
 		display: none;
 	}
 	
+	/** To look like HS, responses from support agents are distinguished by a grey border, not a blue background. */
+	#app #conv-layout .thread-type-message {
+	    background-color:transparent;
+	    -webkit-box-shadow: inset 5px 0 0 0 #ffe19d;
+	    box-shadow: inset 5px 0 0 0 #93a1b0;
+	}
+	
 	/**
 	 * Single conversation sidebar.
 	 * Make look more like HS with grey BG, white panels, box shadow, etc. 
