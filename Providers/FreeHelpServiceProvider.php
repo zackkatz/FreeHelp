@@ -240,6 +240,11 @@ JS;
 		border-radius: 4px;
 	}
 	
+	/** Clean up the dropdown menu by removing icons, matching Help Scout */
+	#app .sidebar-buttons .dropdown-menu .glyphicon {
+		display: none;
+	}
+	
 	/** Use HS background color for sidebar. Don't modify in modals. */ 
 	@media (min-width:992px) {
 		#app .sidebar-2col {
