@@ -228,6 +228,24 @@ JS;
 		left: -1px;
 	}
 	
+	#conversations-bulk-actions .btn-group button.btn:has(.glyphicon-user) {
+		border-radius: 6px 0 0 6px;
+	}
+	#conversations-bulk-actions button.conv-delete {
+		border-radius: 0 6px 6px 0;
+	}
+	
+	/** Hide Workflows if there are no Workflows */
+	#conversations-bulk-actions .btn-group:not(:has(.dropdown-menu li)) {
+    	display: none;
+	}
+	#conversations-bulk-actions button.btn {
+		padding: 6px 14px;
+	}
+	#conversation-bulk-actions .btn-default {
+		border-color: 1px solid #c5ced6;
+	}
+	
 	/**
 	 * Sidebar
 	 */
@@ -276,27 +294,70 @@ JS;
 		margin: 0 0 8px;
 		font-size: 18px;
 	}
+
 	
+	/**
+	 * Icons
+	 */
 	#app .sidebar-buttons .glyphicon:before,
+	#conv-toolbar .glyphicon:before,
+	#conversations-bulk-actions .glyphicon:before,
+	.note-btn i.glyphicon-trash:before,
+	#add-tag-wrap .glyphicon-ok:before,
 	#folders .glyphicon:before {
 	    content: "";
 	}
 	
 	#folders .glyphicon,
+	#conv-toolbar .glyphicon,
+	#conversations-bulk-actions .glyphicon,
+	#app .note-btn i.glyphicon-trash,
+	#add-tag-wrap .glyphicon-ok,
 	#app .sidebar-buttons .glyphicon {
 		display: block;
 	    width: 20px;
 	    height: 20px;
+	    top: auto;
 	    background-size: contain;
 	    margin-top: -2px;
 	    background-color:  transparent!important;
 	    filter: invert(68%) sepia(14%) saturate(352%) hue-rotate(170deg) brightness(92%) contrast(84%);
 	}
+	#app .note-btn i.glyphicon-trash,
 	#app .sidebar-buttons .glyphicon {
 		display: inline-block;
 		width: 18px;
 		height: 18px;
 	    margin-top: 0;
+	}
+	#add-tag-wrap .glyphicon-ok,
+	#app #conversations-bulk-actions .glyphicon,
+	#conv-toolbar .glyphicon {
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		margin: 1em .5em 0;
+		filter: invert(40%) sepia(10%) saturate(805%) hue-rotate(169deg) brightness(95%) contrast(98%);
+	}
+	#add-tag-wrap .glyphicon-ok,
+	#conv-toolbar .conv-info .glyphicon,
+	#conv-toolbar #email-conv-switch .glyphicon,
+	#conv-toolbar #phone-conv-switch .glyphicon {
+		margin: 0.25em 0 0;
+	}
+	
+	#add-tag-wrap .glyphicon-ok {
+		width: 20px;
+		height: 20px;
+		margin: 0;
+		top: 3px;
+	}
+
+	#app #conversations-bulk-actions .glyphicon {
+		width: 20px;
+	    height: 20px;
+		margin: 0.25em 0 0;
+		padding: 8px 0 8px 0;
 	}
 	
 	#folders .glyphicon-hand-right {
@@ -311,34 +372,98 @@ JS;
 	#folders .glyphicon-duplicate {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" /></svg>') left top no-repeat;
 	}
+	#conv-toolbar .glyphicon-user,
+	#conversations-bulk-actions .glyphicon-user,
 	#folders .glyphicon-user {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>') left top no-repeat;
 	}
 	#folders .glyphicon-lock {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>') left top no-repeat;
 	}
-	#folders .glyphicon-trash {
+	.note-btn i.glyphicon-trash,
+	#folders .glyphicon-trash,
+	#conversations-bulk-actions .glyphicon-trash,
+ 	#conv-toolbar .glyphicon-trash {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg>') left top no-repeat;
 	}
 	#folders .glyphicon-ban-circle {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /></svg>') left top no-repeat;
 	}
+	#conv-toolbar .glyphicon-time,
 	#folders .glyphicon-time {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>') left top no-repeat;
+	}
+	#conv-toolbar .glyphicon-earphone {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>') left top no-repeat;
 	}
 	#app .sidebar-buttons .glyphicon-envelope {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" /><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" /></svg>') left top no-repeat;
 	}
+	#conv-toolbar .glyphicon-envelope {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>') left top no-repeat;
+	}
 	#app .sidebar-buttons .glyphicon-cog {
 		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path fill-rule="evenodd" d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 01-.517.608 7.45 7.45 0 00-.478.198.798.798 0 01-.796-.064l-.453-.324a1.875 1.875 0 00-2.416.2l-.243.243a1.875 1.875 0 00-.2 2.416l.324.453a.798.798 0 01.064.796 7.448 7.448 0 00-.198.478.798.798 0 01-.608.517l-.55.092a1.875 1.875 0 00-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 01-.064.796l-.324.453a1.875 1.875 0 00.2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 01.796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 01.517-.608 7.52 7.52 0 00.478-.198.798.798 0 01.796.064l.453.324a1.875 1.875 0 002.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 01-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 001.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 01-.608-.517 7.507 7.507 0 00-.198-.478.798.798 0 01.064-.796l.324-.453a1.875 1.875 0 00-.2-2.416l-.243-.243a1.875 1.875 0 00-2.416-.2l-.453.324a.798.798 0 01-.796.064 7.462 7.462 0 00-.478-.198.798.798 0 01-.517-.608l-.091-.55a1.875 1.875 0 00-1.85-1.566h-.344zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clip-rule="evenodd" /></svg>') left top no-repeat;
 	}
+	#conv-toolbar .glyphicon-share-alt {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l6-6m0 0l-6-6m6 6H9a6 6 0 000 12h3" /></svg>') left top no-repeat;
+	}
+	#conv-toolbar .glyphicon-edit {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>') left top no-repeat;
+	}
+	#add-tag-wrap .glyphicon-ok {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.35" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>') left top no-repeat;
+	}
+	#conversations-bulk-actions .glyphicon-tag,
+	#conv-toolbar .glyphicon-tag {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" /><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" /></svg>') left top no-repeat;
+	}
+	#conv-toolbar .glyphicon-option-horizontal {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>') left top no-repeat;
+	}
 	
+	#conversations-bulk-actions .glyphicon-random,
+	#conv-toolbar .glyphicon-random {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>') left top no-repeat;
+	}
+	#conversations-bulk-actions .glyphicon-flag,
+	#conv-toolbar .glyphicon-flag {
+		background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.85" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" /></svg>') left top no-repeat;
+	}
+	#conv-toolbar .conv-info .glyphicon-flag {
+		filter: invert(99%) sepia(3%) saturate(1014%) hue-rotate(289deg) brightness(117%) contrast(100%);
+	}
+	#conv-toolbar .dropdown-with-icons .glyphicon {
+		display: none;
+	}
+	
+	
+	/** Blue icons */
+	#add-tag-wrap .glyphicon,
 	#folders li.active .glyphicon,
 	#folders li.active:hover .glyphicon {
 		filter: invert(49%) sepia(81%) saturate(3731%) hue-rotate(184deg) brightness(97%) contrast(91%);
 	}
+	
+	/** Darker gray */
+	#app .note-btn i.glyphicon-trash,
 	#folders li:hover .glyphicon {
 		filter: invert(56%) sepia(12%) saturate(555%) hue-rotate(169deg) brightness(88%) contrast(89%);
+	}
+	
+	/** Medium gray */
+	#conversations-bulk-actions .glyphicon {
+		filter: invert(53%) sepia(16%) saturate(440%) hue-rotate(169deg) brightness(93%) contrast(85%);
+	}
+	
+	/** Very dark gray */
+	#conv-toolbar .conv-info .glyphicon-user {
+		filter: invert(17%) sepia(0%) saturate(0%) hue-rotate(208deg) brightness(96%) contrast(89%);
+	}
+	
+	#conversations-bulk-actions .btn-group:hover .glyphicon,
+	#conv-toolbar .conv-action.glyphicon:hover {
+		filter: invert(29%) sepia(33%) saturate(386%) hue-rotate(165deg) brightness(91%) contrast(88%);
 	}
 	
 	/**
@@ -363,6 +488,11 @@ JS;
 	/**
 	 * Single conversations
 	 */
+	 
+	 /** Fix the tag button height in the tag wrapper */
+	#add-tag-wrap .input-group-btn .btn {
+		height: 32px;
+	}
 	 
 	 /* Look more like Help Scout: blue background => white. */
 	 #app #conv-toolbar {
