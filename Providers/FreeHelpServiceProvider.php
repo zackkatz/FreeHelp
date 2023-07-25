@@ -3,14 +3,12 @@
 namespace Modules\FreeHelp\Providers;
 use Illuminate\Support\ServiceProvider;
 
-class FreeHelpServiceProvider extends ServiceProvider
-{
-    private const MODULE_NAME = 'freehelp';
+class FreeHelpServiceProvider extends ServiceProvider {
+	private const MODULE_NAME = 'freehelp';
 
-    public function boot()
-    {
-        \Eventy::addAction('javascript', function() {
-            echo <<<JS
+	public function boot() {
+		\Eventy::addAction( 'javascript', function () {
+			echo <<<JS
 
 
 /**
@@ -102,9 +100,9 @@ $('.conv-cb label').on( 'click', function(e){
 
 
 JS;
-        }, -1, 3);
+		}, - 1, 3 );
 
-	    \Eventy::addAction('layout.head', function() {
+		\Eventy::addAction( 'layout.head', function () {
 			echo <<<HTML
 <style>
 	#app { 
@@ -589,6 +587,6 @@ JS;
 	
 </style>
 HTML;
-	    }, -2, 3);
-    }
+		}, - 2, 3 );
+	}
 }
