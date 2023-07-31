@@ -502,13 +502,6 @@ JS;
 		padding-left: 9px;
 	}
 	
-	/** Hide some unused buttons in text editor. */
-	#app .note-btn-group.note-color,
-	#app .note-btn-group.note-btn-underline,
-	#app .note-btn[aria-label="Remove Formatting"] {
-		display: none;
-	}
-	
 	/** To look like HS, responses from support agents are distinguished by a grey border, not a blue background. */
 	#app #conv-layout .thread-type-message {
 	    background-color:transparent;
