@@ -46,11 +46,6 @@ $( document ).on( 'keyup', function( e ) {
 	}
 	
 	switch ( e.which ) {
-		// Forward slash
-		case 191:
-			$( '#search-dt').not('[aria-expanded=true]').trigger('click'); // Click instead of toggle to run the .setTimeout() focus that FS uses.
-			break;
-		
 		// Escape key
 		case 27:
 			// Close all open dropdowns.
