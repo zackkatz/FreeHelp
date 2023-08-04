@@ -23,6 +23,15 @@ $( document ).ajaxComplete(function() {
 });
 
 /**
+ *  Use Command/Control + Enter to submit a note or reply.
+ */
+$( document ).on( 'keydown', function( e ) {
+	if ( (e.ctrlKey || e.metaKey) && e.key == "Enter") {
+		$( '.note-editor .btn-send-text' ).click();
+	}
+} );
+
+/**
 * Convert custom field dropdowns to Select2.
 */
 $( '#custom-fields-form select:not(.cf-multiselect)').each(function () {
