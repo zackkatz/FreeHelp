@@ -17,6 +17,16 @@ class FreeHelpServiceProvider extends ServiceProvider {
 */
 $('[target="_blank"]').attr("target", null );
 
+// Let's use better terminology.
+$('a[href*=whitelist]').text(function ( index, text ) {
+	return text.replace( 'Whitelist', 'Allowlist' ).replace( 'whitelist', 'allowlist' );
+});
+
+// Let's use better terminology.
+$('a[href*=blacklist]').text(function ( index, text ) {
+	return text.replace( 'Blacklist', 'Blocklist' ).replace( 'blacklist', 'blocklist' );
+});
+
 // In Reports and other AJAX-generated links.
 $( document ).ajaxComplete(function() {
 	$('[target="_blank"]').attr("target", null );
