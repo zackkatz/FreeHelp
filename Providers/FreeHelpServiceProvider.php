@@ -17,10 +17,29 @@ class FreeHelpServiceProvider extends ServiceProvider {
 */
 $('[target="_blank"]').attr("target", null );
 
+// Let's use better terminology.
+$('a[href*=whitelist]').text(function ( index, text ) {
+	return text.replace( 'Whitelist', 'Allowlist' ).replace( 'whitelist', 'allowlist' );
+});
+
+// Let's use better terminology.
+$('a[href*=blacklist]').text(function ( index, text ) {
+	return text.replace( 'Blacklist', 'Blocklist' ).replace( 'blacklist', 'blocklist' );
+});
+
 // In Reports and other AJAX-generated links.
 $( document ).ajaxComplete(function() {
 	$('[target="_blank"]').attr("target", null );
 });
+
+/**
+ *  Use Command/Control + Enter to submit a note or reply.
+ */
+$( document ).on( 'keydown', function( e ) {
+	if ( (e.ctrlKey || e.metaKey) && e.key == "Enter") {
+		$( '.note-editor .btn-send-text' ).click();
+	}
+} );
 
 /**
 * Convert custom field dropdowns to Select2.
@@ -46,11 +65,6 @@ $( document ).on( 'keyup', function( e ) {
 	}
 	
 	switch ( e.which ) {
-		// Forward slash
-		case 191:
-			$( '#search-dt').not('[aria-expanded=true]').trigger('click'); // Click instead of toggle to run the .setTimeout() focus that FS uses.
-			break;
-		
 		// Escape key
 		case 27:
 			// Close all open dropdowns.
@@ -545,6 +559,13 @@ JS;
 		    white-space: nowrap;
 		    width:auto;
 	    }
+	}
+	
+	/** Make the editor feel more like Help Scout's */
+	#app .note-editor.note-frame .note-editing-area .note-editable {
+		color: #405261;
+		font: 14px / 20px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+		outline:  rgb(64, 82, 97) none 0px;
 	}
 	
 	#app .panel-default > .panel-heading + .panel-collapse > .panel-body {
