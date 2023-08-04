@@ -10,6 +10,7 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 - Use nicer [Heroicons](https://heroicons.com) instead of the default FreeScout icons
 - Apply many CSS tweaks to make FreeScout look and feel more like Help Scout
   - Wrap Custom Fields in the familiar gray box
+  - Update the editor fonts to match Help Scout
   - Replace folder icons with nicer [Heroicons](https://heroicons.com)
   - Remove many of the blue highlights in the FreeScout interface
   - Match more line spacing and font styles/sizings
@@ -39,6 +40,7 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 
 ### 1.0.3 on August 4, 2023
 
+- Update fonts to make the editor text feel more like Help Scout's
 - Type Command + Return to submit a reply or note (or Control + Return in Windows)
 - Replace "Blacklist" with "Blocklist" and "Whitelist" with "Allowlist"
 
