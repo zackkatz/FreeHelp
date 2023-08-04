@@ -37,6 +37,11 @@ FreeHelp makes FreeScout look and feel more like Help Scout, adding many small q
 
 ## Changelog
 
+### 1.0.3 on August 4, 2023
+
+- Type Command + Return to submit a reply or note (or Control + Return in Windows)
+- Replace "Blacklist" with "Blocklist" and "Whitelist" with "Allowlist"
+
 ### 1.0.2 on August 4, 2023
 
 - Clean up the sidebar gear icon dropdown menu by removing icons, matching Help Scout
