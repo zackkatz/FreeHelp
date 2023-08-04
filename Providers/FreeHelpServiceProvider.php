@@ -547,6 +547,13 @@ JS;
 	    }
 	}
 	
+	/** Make the editor feel more like Help Scout's */
+	#app .note-editor.note-frame .note-editing-area .note-editable {
+		color: #405261;
+		font: 14px / 20px Arial, Helvetica, Verdana, Tahoma, sans-serif;
+		outline:  rgb(64, 82, 97) none 0px;
+	}
+	
 	#app .panel-default > .panel-heading + .panel-collapse > .panel-body {
 		background-color: #fff!important;
 		border-radius: 0 0 4px 4px;
