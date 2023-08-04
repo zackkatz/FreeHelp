@@ -344,6 +344,10 @@ JS;
 		margin: 0.25em 0 0;
 	}
 	
+	#app .sidebar-buttons .glyphicon {
+		margin-top: 3px;
+	}
+	
 	#add-tag-wrap .glyphicon-ok {
 		width: 20px;
 		height: 20px;
